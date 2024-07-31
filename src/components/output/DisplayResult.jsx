@@ -1,8 +1,22 @@
 import style from "./displayResult.module.css";
 import { formatText } from "../../utils/formatText";
+import { saveText } from "../../api/saveText";
 
-const DisplayResult = ({ sentence }) => {
-  console.log(formatText(sentence).split("\n"));
+const DisplayResult = ({ sentence, setIsLoading }) => {
+  const saveBtn = async () => {
+    try {
+      setIsLoading(true);
+      const res = await saveText(sentence);
+      if (res.data?.text) {
+        setIsLoading(false);
+        alert("save text success");
+      }
+    } catch (err) {
+      alert(err);
+      console.log(err);
+    }
+  };
+
   return (
     <>
       {sentence ? (
@@ -15,9 +29,7 @@ const DisplayResult = ({ sentence }) => {
               ))}
           </div>
           <div className={style.groupBtn}>
-            <button>Save</button>
-            <button>Open</button>
-            <button>Download</button>
+            <button onClick={saveBtn}>Save</button>
           </div>
         </div>
       ) : (

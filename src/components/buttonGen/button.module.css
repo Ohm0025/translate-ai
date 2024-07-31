@@ -1,7 +1,11 @@
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 110px 110px;
   justify-content: center;
   padding-top: 20px;
+  gap: 5px;
+  align-items: center;
+
   & button {
     padding: 10px;
     cursor: pointer;

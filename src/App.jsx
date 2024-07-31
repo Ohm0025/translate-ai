@@ -34,10 +34,14 @@ function App() {
       <div className={style.box}>
         <div className={style.box1}>
           <TextInput request={request} func={(value) => setRequest(value)} />
-          <ButtonGen func={generateText} />
+          <ButtonGen func={generateText} clear={() => setRequest("")} />
         </div>
         <div className={style.box1}>
-          {isLoading ? <Loading /> : <DisplayResult sentence={response} />}
+          {isLoading ? (
+            <Loading />
+          ) : (
+            <DisplayResult sentence={response} setIsLoading={setIsLoading} />
+          )}
         </div>
       </div>
     </div>
