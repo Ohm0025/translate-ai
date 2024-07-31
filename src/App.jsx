@@ -31,9 +31,15 @@ function App() {
   return (
     <div className={style.container}>
       <h1>Translate AI</h1>
-      <TextInput request={request} func={(value) => setRequest(value)} />
-      <ButtonGen func={generateText} />
-      {isLoading ? <Loading /> : <DisplayResult sentence={response} />}
+      <div className={style.box}>
+        <div className={style.box1}>
+          <TextInput request={request} func={(value) => setRequest(value)} />
+          <ButtonGen func={generateText} />
+        </div>
+        <div className={style.box1}>
+          {isLoading ? <Loading /> : <DisplayResult sentence={response} />}
+        </div>
+      </div>
     </div>
   );
 }

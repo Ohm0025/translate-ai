@@ -1,9 +1,9 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { prompt } from "./constants";
 
 const genAi = new GoogleGenerativeAI("AIzaSyA2g2LZG-FGoZx4EtORerh7SM6CG13JC9U");
 
-const initPrompt =
-  "Translate the following sentence from Thai to English. And give three examples of dialog using that english sentence in daily life.";
+const initPrompt = prompt;
 
 async function runAi(sentence) {
   const model = genAi.getGenerativeModel({ model: "gemini-1.5-flash" });
