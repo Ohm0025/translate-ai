@@ -11,4 +11,14 @@ const openList = async () => {
   return res;
 };
 
-export { saveText, openList };
+const openText = async (index) => {
+  const res = await axios.get(api_url + "/getText/" + index);
+  return res;
+};
+
+const genAi = async (sentence) => {
+  const res = await axios.post(api_url + "/runAi", { sentence });
+  return res.data?.text;
+};
+
+export { saveText, openList, openText, genAi };

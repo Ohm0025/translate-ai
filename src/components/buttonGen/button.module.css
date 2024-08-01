@@ -11,3 +11,14 @@
     cursor: pointer;
   }
 }
+.listBtn {
+  background: none;
+  border: none;
+  font-size: 17px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+.listBtn:hover {
+  text-decoration: underline;
+  color: blue;
+}
