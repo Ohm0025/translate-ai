@@ -1,5 +1,6 @@
 import axios from "axios";
-import { api_url } from "../constant";
+
+const api_url = import.meta.env.VITE_BASE_URL;
 
 const saveText = async (sentence) => {
   const res = await axios.post(api_url, { text: sentence });
