@@ -13,11 +13,13 @@ const openList = async () => {
 };
 
 const openText = async (index) => {
+  console.log(api_url);
   const res = await axios.get(api_url + "/getText/" + index);
   return res;
 };
 
 const genAi = async (sentence) => {
+  console.log(api_url);
   const res = await axios.post(api_url + "/runAi", { sentence });
   return res.data?.text;
 };
