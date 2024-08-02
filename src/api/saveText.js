@@ -22,4 +22,4 @@ const genAi = async (sentence) => {
   return res.data?.text;
 };
 
-export { saveText, openList, openText, genAi, testAccessApi };
+export { saveText, openList, openText, genAi };
