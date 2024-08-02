@@ -10,7 +10,6 @@ const ReadPage = () => {
 
   let { indexText } = useParams();
   useEffect(() => {
-    console.log(indexText);
     const readText = async () => {
       try {
         setIsLoading(true);
